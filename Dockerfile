@@ -20,8 +20,8 @@ WORKDIR /app
 # Copy the built jar file from the build stage
 COPY --from=build /app/target/vulnerable-springboot-app.jar /app/vulnerable-springboot-app.jar
 
-# Expose port 8080 to the outside
-EXPOSE 8080
+# Expose port 6000 to the outside
+EXPOSE 6000
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "/app/vulnerable-springboot-app.jar"]
