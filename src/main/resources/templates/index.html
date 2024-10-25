@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Vulnerable App</title>
+</head>
+<body>
+<h1>Welcome to the Vulnerable App</h1>
+<!-- XSS Vulnerability -->
+<p th:text="${userInput}">User input will be displayed here</p>
+</body>
+</html>
