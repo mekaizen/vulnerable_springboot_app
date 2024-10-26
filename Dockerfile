@@ -25,7 +25,7 @@ WORKDIR /app
 COPY --from=build /app/target/vulnerable-springboot-app-0.0.1-SNAPSHOT.jar /app/vulnerable-springboot-app.jar
 
 # Expose port 6000 to the outside
-EXPOSE 6000
+EXPOSE 2000
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "/app/vulnerable-springboot-app.jar"]
