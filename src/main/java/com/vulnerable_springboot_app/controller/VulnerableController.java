@@ -37,7 +37,7 @@ public class VulnerableController {
 
     // 3. **Insecure Deserialization** - deserializing user-controlled input
     @PostMapping("/deserialize")
-    public String deserialize(@RequestBody byte[] data) throws IOException, ClassNotFoundException {
+    public String deserialize_one(@RequestBody byte[] data) throws IOException, ClassNotFoundException {
         ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(data)); // Vulnerable to deserialization attack
         Object obj = ois.readObject();
         return obj.toString();
