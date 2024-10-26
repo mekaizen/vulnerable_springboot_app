@@ -9,7 +9,14 @@ COPY pom.xml .
 COPY src ./src
 
 # Build the project
-RUN mvn clean package -DskipTests
+#RUN mvn clean package -DskipTests
+
+# Build the project with added compiler flags for Java 17 compatibility
+RUN mvn clean package -DskipTests \
+    -Dmaven.compiler.forceJavacCompilerUse=true \
+    -Djdk.module.illegalAccess=permit \
+    -Dmaven.compiler.compilerArgs="--add-opens jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED"
+
 
 # Use an official OpenJDK runtime as a parent image
 FROM openjdk:17-jdk-slim
