@@ -25,7 +25,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the built jar file from the build stage
-COPY --from=build /app/target/vulnerable-springboot-app.jar /app/vulnerable-springboot-app.jar
+COPY --from=build /app/target/vulnerable-springboot-app-0.0.1-SNAPSHOT.jar /app/vulnerable-springboot-app.jar
 
 # Expose port 6000 to the outside
 EXPOSE 6000

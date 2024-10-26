@@ -66,6 +66,12 @@
 			<artifactId>commons-collections</artifactId>
 			<version>3.2.1</version> <!-- Known to have deserialization vulnerabilities -->
 		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.9.7</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -91,6 +97,14 @@
 				<configuration>
 					<source>17</source>
 					<target>17</target>
+					<forceJavacCompilerUse>true</forceJavacCompilerUse>
+
+					<compilerArgs>
+						<arg>--add-opens</arg>
+						<arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+						<arg>--add-opens</arg>
+						<arg>jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+					</compilerArgs>
 				</configuration>
 			</plugin>
 		</plugins>
