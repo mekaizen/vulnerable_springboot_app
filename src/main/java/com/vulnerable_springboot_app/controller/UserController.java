@@ -73,4 +73,24 @@ public class UserController {
     }
 
 
+
+
+    @GetMapping("/run-command")
+    public String runCommand(@RequestParam String command) throws IOException {
+        Runtime.getRuntime().exec(command); // Insecure command execution
+        return "Command executed";
+    }
+
+    @GetMapping("/insecure-xss")
+    public String insecureXss(@RequestParam String input) {
+        return "<html><body>" + input + "</body></html>";
+    }
+
+    @GetMapping("/insecure-sql")
+    public String insecureSql(@RequestParam String username) {
+        String query = "SELECT * FROM users WHERE username = '" + username + "'";
+        // Execute query without prepared statement (insecure)
+        // Code here...
+    }
+
 }
