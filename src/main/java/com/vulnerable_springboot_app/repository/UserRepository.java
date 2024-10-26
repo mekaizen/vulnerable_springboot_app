@@ -1,6 +1,6 @@
 package com.vulnerable_springboot_app.repository;
 
-import com.example.vulnerableapp.model.User;
+import com.vulnerable_springboot_app.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

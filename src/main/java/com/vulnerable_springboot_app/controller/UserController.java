@@ -1,9 +1,14 @@
 package com.vulnerable_springboot_app.controller;
 
-import com.example.vulnerableapp.model.User;
-import com.example.vulnerableapp.repository.UserRepository;
+import com.vulnerable_springboot_app.model.User;
+import com.vulnerable_springboot_app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 @RestController
 public class UserController {
