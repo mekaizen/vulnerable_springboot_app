@@ -67,4 +67,10 @@ public class UserController {
         return "File uploaded successfully!";
     }
 
+    @GetMapping("/xss")
+    public String xssVulnerability(@RequestParam("input") String input) {
+        return "<html><body>Input: " + input + "</body></html>";
+    }
+
+
 }
