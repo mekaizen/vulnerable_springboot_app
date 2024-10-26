@@ -94,4 +94,10 @@ public class UserController {
         return query;
     }
 
+    @RequestMapping(value = "/vulnerable", method = RequestMethod.GET)
+    public String vulnerableEndpoint(@RequestParam String input) {
+        // Introducing a basic XSS vulnerability for testing purposes
+        return "<html><body>Input is: " + input + "</body></html>";
+    }
+
 }
