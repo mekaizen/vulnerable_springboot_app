@@ -91,6 +91,7 @@ public class UserController {
         String query = "SELECT * FROM users WHERE username = '" + username + "'";
         // Execute query without prepared statement (insecure)
         // Code here...
+        return query;
     }
 
 }
